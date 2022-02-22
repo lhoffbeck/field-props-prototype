@@ -1,12 +1,14 @@
-import { StrictMode } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
+import { AppProvider } from "@shopify/polaris";
+import en from "@shopify/polaris/locales/en.json";
 
 import App from "./App";
+import "@shopify/polaris/build/esm/styles.css";
 
-const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <StrictMode>
+  <AppProvider i18n={en} theme={{ colorScheme: "light" }}>
     <App />
-  </StrictMode>,
-  rootElement
+  </AppProvider>,
+  document.getElementById("root")
 );
